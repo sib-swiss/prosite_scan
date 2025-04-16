@@ -1,0 +1,37 @@
+This directory contains PERL scripts for PROSITE searching and related stuff.
+
+At the moment, the following files are available:
+
+prosite_convert    : Converts the PROSITE.DAT file of the PROSITE release
+                     into a file containing regular expressions. This file
+		     is needed for prosite_scan.
+		 
+prosite_scan       : Takes the regular-expression file (as created by 
+                     prosite_convert) and scans a sequence (or a group of 
+		     sequences) with all patterns contained in the file.
+		     Output either in ASCII or HTML format.
+		
+dbshuffle          : Performs random shuffling of a database, a window size
+                     for regional shuffling can be specified. Input and output
+		     databases have to be in FASTA format.
+
+shuffle            : Performs random shuffling of a single sequence, a window 
+                     size for regional shuffling can be specified. It is 
+                     possible to create a 'database' containing several 
+		     shuffled sequences made from one input sequence. 
+
+prosite_statistics : Runs all patterns of a prosite file (in regular expression
+	             format, see prosite_convert) against shuffled version of
+		     a database (see dbshuffle) and counts number of 
+		     occurrences. Some basic statistics is also calculated.
+		 
+pst_stat.txt
+pst_stat.html
+pst_stat.table.html: The prosite_statistics output of a current release of 
+                     PROSITE agains a current release of SwissProt in three
+		     different formats. The .table.html format is only for
+		     HTML viewers that support tables.
+           
+pattern_find       : Searches a FASTA-formatted sequence database with
+                     a regular expression (in PERL style or in PROSITE
+		     format)
